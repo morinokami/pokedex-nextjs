@@ -41,6 +41,7 @@
     "husky": "^4.2.5",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.4.0",
+    "jest-fetch-mock": "^3.0.3",
     "prettier": "2.0.5",
     "ts-jest": "^26.2.0",
     "typescript": "^3.9.7"
