@@ -1,11 +1,12 @@
 export interface Pokemon {
+  id: number
   name: string
   url: string
 }
 
 export interface PokemonInfo {
-  name: string
   id: number
+  name: string
   height: number
   weight: number
   //TODO: Extend
@@ -31,7 +32,11 @@ interface PokemonInfoResponse {
 export const getPokemons = async (): Promise<Pokemon[]> => {
   const result = await fetch('https://pokeapi.co/api/v2/pokemon?limit=2000')
   const data = (await result.json()) as PokemonsResponse
-  return data.results.map((d) => ({ name: d.name, url: d.url }))
+  return data.results.map((d) => ({
+    id: extractIdFromURL(d.url),
+    name: d.name,
+    url: d.url,
+  }))
 }
 
 export const getPokemonInfo = async (name: string): Promise<PokemonInfo> => {
@@ -48,4 +53,9 @@ export const getPokemonInfo = async (name: string): Promise<PokemonInfo> => {
 
 export const getPokemonImageURL = (id: number): string => {
   return `https://pokeres.bastionbot.org/images/pokemon/${id}.png`
+}
+
+const extractIdFromURL = (url: string): number => {
+  const splitted = url.split('/')
+  return +splitted[splitted.length - 2]
 }
