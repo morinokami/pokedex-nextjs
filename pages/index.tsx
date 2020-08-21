@@ -1,16 +1,14 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Head from 'next/head'
 import { GetStaticProps } from 'next'
 import styles from '../styles/Home.module.scss'
 import { Pokemon, getPokemons } from '../lib/pokemons'
+import Navbar from '../components/navbar'
+import Card from '../components/card'
 
 const Home: React.FunctionComponent<{ pokemons: Pokemon[] }> = ({
   pokemons,
 }) => {
-  useEffect(() => {
-    console.log(pokemons)
-  })
-
   return (
     <div className={styles.container}>
       <Head>
@@ -18,7 +16,14 @@ const Home: React.FunctionComponent<{ pokemons: Pokemon[] }> = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>hey</main>
+      <Navbar />
+      <main className={styles.main}>
+        <div className={styles.grid}>
+          {pokemons.map((p) => (
+            <Card pokemon={p} key={p.id} />
+          ))}
+        </div>
+      </main>
     </div>
   )
 }
