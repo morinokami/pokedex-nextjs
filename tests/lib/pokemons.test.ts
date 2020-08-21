@@ -1,4 +1,8 @@
-import { getPokemons, getPokemonInfo } from '../../lib/pokemons'
+import {
+  getPokemons,
+  getAllPokemonNames,
+  getPokemonInfo,
+} from '../../lib/pokemons'
 import pokemons from '../data/pokemons.json'
 import pokemon from '../data/pokemon.json'
 
@@ -10,6 +14,14 @@ test('fetch pokemons', async () => {
   fetchMock.mockResponseOnce(JSON.stringify(pokemons))
 
   const data = await getPokemons()
+
+  expect(data.length).toEqual(pokemons.results.length)
+})
+
+test('fetch all pokemon names', async () => {
+  fetchMock.mockResponseOnce(JSON.stringify(pokemons))
+
+  const data = await getAllPokemonNames()
 
   expect(data.length).toEqual(pokemons.results.length)
 })

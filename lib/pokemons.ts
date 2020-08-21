@@ -39,6 +39,14 @@ export const getPokemons = async (): Promise<Pokemon[]> => {
   }))
 }
 
+export const getAllPokemonNames = async (): Promise<
+  { params: { name: string } }[]
+> => {
+  const result = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20')
+  const data = (await result.json()) as PokemonsResponse
+  return data.results.map((d) => ({ params: { name: d.name } }))
+}
+
 export const getPokemonInfo = async (name: string): Promise<PokemonInfo> => {
   //TODO: Error handling
   const result = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
