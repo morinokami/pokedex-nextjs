@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { GetStaticProps } from 'next'
 import styles from '../styles/Home.module.scss'
 import { Pokemon, getPokemons } from '../lib/pokemons'
+import Navbar from '../components/navbar'
 import Card from '../components/card'
 
 const Home: React.FunctionComponent<{ pokemons: Pokemon[] }> = ({
@@ -15,6 +16,7 @@ const Home: React.FunctionComponent<{ pokemons: Pokemon[] }> = ({
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Navbar />
       <main className={styles.main}>
         <div className={styles.grid}>
           {pokemons.map((p) => (

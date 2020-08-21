@@ -9,15 +9,16 @@
   background-color: #eaeaea;
   border-radius: 20px;
   transition: color 0.15s ease, border-color 0.15s ease;
-}
 
-.card > img {
-  width: 100%;
-  height: auto;
-}
+  img {
+    width: 100%;
+    height: auto;
+  }
 
-.card > p {
-  margin: 0.8rem 0 0 0;
-  font-weight: bold;
-  color: white;
+  p {
+    margin: 0.8rem 0 0 0;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+  }
 }
