@@ -1,0 +1,32 @@
+.title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fafafa;
+  margin: 10px;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 15px auto;
+  display: flex;
+}
+
+.name {
+  width: 4rem;
+  font-weight: bold;
+  color: #b1a5a5;
+}
+
+.progress {
+  background-color: rgb(233, 233, 233);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.bar {
+  height: 21px;
+  border-radius: 1rem;
+  transition: 1s ease;
+  transition-delay: 1s;
+}

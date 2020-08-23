@@ -16,6 +16,6 @@ test('pokemons are displayed', () => {
       url: 'https://pokeapi.co/api/v2/pokemon/3/',
     },
   ]
-  const { container } = render(<Home pokemons={pokemons} />)
-  expect(container.querySelectorAll('a')).toHaveLength(pokemons.length)
+  const { getAllByTestId } = render(<Home pokemons={pokemons} />)
+  expect(getAllByTestId('card')).toHaveLength(pokemons.length)
 })
