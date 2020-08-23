@@ -9,8 +9,9 @@ export interface PokemonInfo {
   name: string
   height: number
   weight: number
+  types: string[]
+  stats: { name: string; value: number }[]
   //TODO: Extend
-  // types
   // stats
   // ...
 }
@@ -27,6 +28,8 @@ interface PokemonInfoResponse {
   name: string
   height: number
   weight: number
+  types: { type: { name: string } }[]
+  stats: { base_stat: number; stat: { name: string } }[]
 }
 
 export const getPokemons = async (): Promise<Pokemon[]> => {
@@ -56,6 +59,10 @@ export const getPokemonInfo = async (name: string): Promise<PokemonInfo> => {
     name: data.name,
     height: data.height,
     weight: data.weight,
+    types: data.types.map((t) => t.type.name),
+    stats: data.stats
+      .filter((s) => ['hp', 'attack', 'defense', 'speed'].includes(s.stat.name))
+      .map((s) => ({ name: s.stat.name, value: s.base_stat })),
   }
 }
 

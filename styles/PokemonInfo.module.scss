@@ -1,0 +1,26 @@
+.imageContainer {
+  text-align: center;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+
+  img {
+    width: 70%;
+    height: auto;
+    padding: 1rem;
+  }
+}
+
+.info {
+  color: white;
+
+  h2 {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .wheight {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+  }
+}
