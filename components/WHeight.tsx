@@ -9,7 +9,7 @@ const WHeight: React.FunctionComponent<{ value: number; weight: boolean }> = ({
   const desc = weight ? 'Weight' : 'Height'
   return (
     <div className={styles.container}>
-      <div className={styles.value}>{`${value / 10} ${unit}`}</div>
+      <div className={styles.value}>{`${(value / 10).toFixed(1)} ${unit}`}</div>
       <div className={styles.desc}>{desc}</div>
     </div>
   )
