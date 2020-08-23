@@ -25,10 +25,9 @@ const ProgressBar: React.FunctionComponent<{
   percent: number
 }> = ({ name, percent }) => {
   const [value, setValue] = useState<number>(0)
-  console.log(name, value)
 
   useEffect(() => {
-    setValue(percent)
+    setTimeout(() => setValue(percent), 100)
   }, [percent])
 
   return (
