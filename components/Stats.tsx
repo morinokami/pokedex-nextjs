@@ -31,7 +31,7 @@ const ProgressBar: React.FunctionComponent<{
   }, [percent])
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} data-testid="progress">
       <div className={styles.name}>{convertName(name)}</div>
       <div className={styles.progress} style={{ width: '100%' }}>
         <div

@@ -1,13 +1,19 @@
 import React from 'react'
 import styles from '../styles/Types.module.scss'
 
+export const Type: React.FunctionComponent<{ type: string }> = ({ type }) => {
+  return (
+    <li style={{ backgroundColor: getTypeColor(type) }} data-testid="type">
+      {type}
+    </li>
+  )
+}
+
 const Types: React.FunctionComponent<{ types: string[] }> = ({ types }) => {
   return (
     <ul className={styles.list}>
       {types.map((t, idx) => (
-        <li key={idx} style={{ backgroundColor: getTypeColor(t) }}>
-          {t}
-        </li>
+        <Type type={t} key={idx} />
       ))}
     </ul>
   )
