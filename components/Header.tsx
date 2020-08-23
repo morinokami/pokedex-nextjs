@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from '../styles/Navbar.module.scss'
 
-const Navbar: React.FunctionComponent = () => {
+const Header: React.FunctionComponent = () => {
   return (
-    <header className={styles.navbar} data-testid="navbar">
+    <header className={styles.header} data-testid="header">
       <p className={styles.title}>Pokedex</p>
     </header>
   )
 }
 
-export default Navbar
+export default Header

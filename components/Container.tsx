@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import styles from '../styles/Container.module.scss'
-import Navbar from './navbar'
+import Navbar from './Header'
 
 const Container: React.FunctionComponent<{ title: string }> = ({
   children,

@@ -2,8 +2,8 @@ import React from 'react'
 import { GetStaticProps } from 'next'
 import styles from '../styles/Home.module.scss'
 import { Pokemon, getPokemons } from '../lib/pokemons'
-import Container from '../components/container'
-import Card from '../components/card'
+import Container from '../components/Container'
+import Card from '../components/Card'
 
 const Home: React.FunctionComponent<{ pokemons: Pokemon[] }> = ({
   pokemons,
