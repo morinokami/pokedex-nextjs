@@ -1,3 +1,5 @@
+@use 'variables' as v;
+
 .container {
   text-align: center;
 }
@@ -6,8 +8,9 @@
   font-size: 26px;
   font-weight: bold;
   padding-bottom: 15px;
+  color: v.$secondary-text-color;
 }
 
 .desc {
-  color: #b1a5a5;
+  color: v.$dark-text-color;
 }

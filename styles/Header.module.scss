@@ -1,7 +1,9 @@
+@use 'variables' as v;
+
 .header {
   width: 100%;
   height: 64px;
-  background: #d53a47;
+  background: v.$theme-color;
   display: flex;
   position: fixed;
   align-items: center;
@@ -9,7 +11,7 @@
 
 .title {
   margin-left: 1rem;
-  color: white;
+  color: v.$main-text-color;
   font-weight: bold;
   font-size: 21px;
 }

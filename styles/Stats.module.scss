@@ -1,8 +1,10 @@
+@use 'variables' as v;
+
 .title {
   text-align: center;
   font-size: 22px;
   font-weight: bold;
-  color: #fafafa;
+  color: v.$secondary-text-color;
   margin: 10px;
 }
 
@@ -15,11 +17,11 @@
 .name {
   width: 4rem;
   font-weight: bold;
-  color: #b1a5a5;
+  color: v.$dark-text-color;
 }
 
 .progress {
-  background-color: rgb(233, 233, 233);
+  background-color: v.$secondary-text-color;
   border-radius: 1rem;
   overflow: hidden;
 }
