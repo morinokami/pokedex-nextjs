@@ -1,7 +1,12 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { Pokemon, PokemonInfo, getPokemonInfo } from '../lib/pokemons'
+import {
+  Pokemon,
+  PokemonInfo,
+  getPokemonInfo,
+  getPokemonImageURL,
+} from '../lib/pokemons'
 import { useIsVisible } from 'react-is-visible'
-import styles from '../styles/PokemonInfo.module.scss'
+import styles from '../styles/Detail.module.scss'
 import Types from '../components/Types'
 import WHeight from '../components/WHeight'
 import Stats from '../components/Stats'
@@ -20,14 +25,12 @@ const PokemonModal: React.FunctionComponent<{
     }
   }, [isVisible, pokemon.name])
 
+  const src = getPokemonImageURL(pokemon.id)
+
   return (
     <div ref={ref}>
       <div className={styles.imageContainer} style={{ backgroundColor: color }}>
-        {isVisible ? (
-          <img
-            src={`https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png`}
-          />
-        ) : null}
+        {isVisible ? <img src={src} /> : null}
       </div>
       <div className={styles.info}>
         <h2>{pokemon.name}</h2>
